@@ -1,0 +1,9 @@
+.buttons button[type=submit]{
+    background: #035733;
+}
+.buttons button[type=submit]:hover{
+    background: #056f42;
+}
+.buttons input[type=file]::before{
+    background: #035733;
+}

@@ -1,0 +1,28 @@
+{% extends 'sytoapp/new_workers_register.html' %}
+
+{% block content %}
+    <h1>Zaloguj się</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div class="input-data">
+                <input id="name" type="text" name="username" required>
+                <div class="underline"></div>
+                <label for="name">Nazwa użytkownika</label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="input-data">
+                <input id="password" type="password" name="password" required>
+                <div class="underline"></div>
+                <label for="password">Hasło</label>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="btn">
+                <button type="submit">Zaloguj</button>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

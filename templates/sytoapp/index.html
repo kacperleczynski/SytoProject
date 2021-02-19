@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Syto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+
+</nav>
+<main class="main-container">
+        {% block content %}
+            <h1>Syto Wadowice</h1>
+            <div class="first-container">
+                <a href="{% url 'sytoapp:login' %}">Zaloguj</a>
+            </div>
+            <div class="second-container">
+                <a href="{% url 'sytoapp:choose_register' %}">Zarejestruj</a>
+            </div>
+        {% endblock %}
+</main>
+</body>
+</html>

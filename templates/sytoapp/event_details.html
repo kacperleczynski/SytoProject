@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/calendar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/event.css' %}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <title>Syto</title>
+</head>
+<body>
+    <div class="container">
+        <div class="clearfix">
+            <a class="btn btn-primary left" href="{% url 'sytoapp:calendar' %}"> Harmonogram </a>
+        </div>
+        <div class="clearfix-second">
+            <h3>Dyspozycyjność na: <span>{{ event.start_time|date:'m-d' }}</span></h3>
+            <p>Od <span>{{ event.start_time|date:'G:i' }}</span> Do <span>{{ event.end_time|date:'G:i' }}</span></p>
+            <p> Dyspozycyjność: <span>{{ event.duration}} godzin </span></p>
+        </div>
+    </div>
+</body>
+</html>

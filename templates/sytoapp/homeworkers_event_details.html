@@ -1,0 +1,31 @@
+{% load static %}
+{% load has_group %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/calendar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/event.css' %}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <title>Syto</title>
+</head>
+<body>
+<div class="container">
+    <div class="clearfix">
+        {% if user|has_group:'admin' %}
+            <a class="btn btn-primary left" href="{% url 'sytoapp:admin_homeworkers_calendary' %}"> Harmonogram </a>
+        {% else %}
+            <a class="btn btn-primary left" href="{% url 'sytoapp:homeworkers_calendar' %}"> Harmonogram </a>
+        {% endif %}
+    </div>
+    <div class="clearfix-second">
+        <h3>Dyspozycyjność na: <span>{{ homeworkers_event.start_day }}</span></h3>
+        <p>Od <span>{{ homeworkers_event.start_day }}</span> Do <span>{{ homeworkers_event.end_day }}</span></p>
+        <p> Dyspozycyjność na: <span>{{ homeworkers_event.duration_event }} dni </span></p>
+        <p>Ilość osób: <span>{{ homeworkers_event.people_quantity }}</span></p>
+        <p>Ilość materiału: <span>{{ homeworkers_event.day_quantity }} szt.</span></p>
+    </div>
+</div>
+</body>
+</html>

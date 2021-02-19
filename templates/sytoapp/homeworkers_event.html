@@ -1,0 +1,31 @@
+{% load static %}
+{% load has_group %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/calendar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/event.css' %}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="clearfix">
+    <a class="btn btn-info left" href="{% url 'sytoapp:calendar' %}"> Harmonogram </a>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <label for="start-time">Data rozpoczęcia</label>
+    {{ form.start_day }}
+    <label for="end-time">Data zakończenia</label>
+    {{ form.end_day }}
+    <label for="end-time">Ilość materiału</label>
+    {{ form.day_quantity }}
+    <label for="end-time">Ilość osób</label>
+    {{ form.people_quantity }}
+    <button type="submit" class="btn"> Zatwierdź</button>
+</form>
+</body>
+</html>

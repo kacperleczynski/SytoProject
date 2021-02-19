@@ -1,0 +1,34 @@
+{% load static %}
+{% load has_group %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/calendar_style.css' %}">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="clearfix">
+    <span class="left m-2" style="font-size: 20px;">Witaj, {{ request.user }}</span>
+    <a class="btn btn-success right" href="{% url 'sytoapp:logout' %}"> Wyloguj </a>
+    <a class="btn btn-info right mr-2" href="{% url 'sytoapp:calendar' %}?{{ next_month }} "> Następny miesiąc>> </a>
+    {% if user|has_group:'stationary_workers' %}
+        <a class="btn btn-info right mr-2" href="{% url 'sytoapp:event_new' %}"> + Dodaj dyspozycyjność </a>
+    {% else %}
+        <a class="btn btn-info right mr-2" href="{% url 'sytoapp:homeworkers_event_new' %}"> + Dodaj dyspozycyjność </a>
+    {% endif %}
+    <a class="btn btn-info right mr-2" href="{% url 'sytoapp:calendar' %}?{{ prev_month }}"> << Poprzedni miesiąc </a>
+    {% if user|has_group:'stationary_workers' %}
+        <a class="btn btn-success right mr-2" href="{% url 'sytoapp:index2' %}">Powrót</a>
+    {% else %}
+        <a class="btn btn-success right mr-2" href="{% url 'sytoapp:index3' %}">Powrót</a>
+    {% endif %}
+
+</div>
+<div style="color: #032757;">
+    {{ calendar }}
+</div>
+</body>
+</html>

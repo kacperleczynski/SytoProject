@@ -1,0 +1,23 @@
+{% extends 'sytoapp/index.html' %}
+{% load has_group %}
+{% load static %}
+{% block content %}
+    {% if user|has_group:'admin' %}
+    <h1>Syto wadowice</h1>
+    <div class="first-container">
+        <a href="{% url 'sytoapp:logout' %}">Wyloguj</a>
+    </div>
+    <div class="second-container">
+        <a href="{% url 'sytoapp:admin_stationarworkers_calendar' %}">Harmonogram</a>
+    </div>
+        <a href="{% url 'sytoapp:count' %}">Liczba nowych pracowników</a>
+    {% else %}
+    <h1>Syto wadowice</h1>
+    <div class="first-container">
+        <a href="{% url 'sytoapp:logout' %}">Wyloguj</a>
+    </div>
+    <div class="second-container">
+        <a href="{% url 'sytoapp:calendar' %}">Harmonogram</a>
+    </div>
+    {% endif %}
+{% endblock %}

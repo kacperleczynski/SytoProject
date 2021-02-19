@@ -1,0 +1,48 @@
+{% extends 'sytoapp/new_homeworkers_register.html' %}
+{% block content %}
+    <h1>Zajerestruj się</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div class="input-data">
+                {{ user_form.username }}
+                <div class="underline"></div>
+                <label for="name">Nazwa użytkownika</label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="input-data">
+                {{ user_form.password }}
+                <div class="underline"></div>
+                <label for="password">Hasło</label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="input-data">
+                {{ current_homeworker_form.name }}
+                <div class="underline"></div>
+                <label for="name">Imię</label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="input-data">
+                {{ current_homeworker_form.last_name }}
+                <div class="underline"></div>
+                <label for="last_name">Nazwisko</label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="input-data">
+                {{ current_homeworker_form.email }}
+                <div class="underline"></div>
+                <label for="email">E-mail</label>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="btn">
+                <button type="submit">Zarejestruj</button>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

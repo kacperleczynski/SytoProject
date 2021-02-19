@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.register{
+    height: 120vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+.register h1{
+    position: absolute;
+    margin: 0;
+    top: 10%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #032757;
+    text-transform: uppercase;
+}
+.register form{
+    position: absolute;
+    margin: 0;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.register .wrapper{
+    width: 450px;
+    background: #fff;
+    padding: 20px;
+}
+.register .wrapper .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+.register .wrapper .input-data input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid silver;
+    outline: none;
+}
+.register .wrapper .input-data input:focus ~ label,
+.register .wrapper .input-data input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #0195e4;
+}
+.register .wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.register .wrapper .input-data .underline{
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+}
+.register .wrapper .input-data .underline:before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: #0195e4;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.register .wrapper .input-data input:focus ~ .underline:before,
+.register .wrapper .input-data input:valid ~ .underline:before{
+    transform: scaleX(1);
+}
+.register-true h2{
+    position: absolute;
+    margin: 0;
+    top: 10%;
+    left: 50%;
+    margin-right: -50%;
+    font-size: 90px;
+    color: #032757;
+    transform: translate(-50%, -50%);
+}
+.register-true a{
+    position: absolute;
+    margin: 0;
+    top: 25%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    color: black;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+.buttons .btn{
+    padding: 20px;
+}
+.buttons button[type=submit]{
+    padding: 10px;
+    background-color: #0679b6;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.buttons button[type=submit]:hover{
+    background-color: #032757;
+}
+.buttons input[type=file]{
+  color: transparent;
+
+}
+.buttons input[type=file]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.buttons input[type=file]::before {
+	content: "▲ Zdjęcie podpisu elektronicznego";
+    color: #fff;
+    display: inline-block;
+    background: #0679b6;
+    padding: 10px 22px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+.buttons input[type=file]:focus {
+	outline: none !important;
+
+}
+.buttons input[type=file]:active::before {
+	    transform: scale(.9) translate(0px, 2px);
+	   box-shadow:  inset 4px 4px 5px 0px rgba(0, 0, 0, 0.20);
+
+}
+

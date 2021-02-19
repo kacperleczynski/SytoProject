@@ -1,0 +1,10 @@
+{% extends 'sytoapp/index.html'  %}
+{% block content %}
+    <h1>Wybierz rejestracje</h1>
+    <div class="first-container">
+        <a href="{% url 'sytoapp:new_worker' %}">Zarejestruj sie jako nowy pracownik</a>
+    </div>
+    <div class="second-container">
+        <a href="{% url 'sytoapp:current_worker' %}">Zarejestruj sie jako obecny pracownik</a>
+    </div>
+{% endblock %}

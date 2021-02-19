@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Syto</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1>Syto Wadowice</h1>
+<main class="main-container">
+    <div class="first-container">
+        <a href="{% url 'sytoapp:homeworkers_main' %}">Praca chałupnicza</a>
+    </div>
+    <div class="second-container">
+        <a href="{% url 'sytoapp:index' %}">Praca stacjonarna</a>
+    </div>
+</main>
+</body>
+</html>
